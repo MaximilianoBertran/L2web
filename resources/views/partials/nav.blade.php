@@ -17,7 +17,8 @@
 				<li class="nav-item"><a class="nav-link {{ setActive('features') }}" href="{{ route('features') }}">@lang('Features')</a></li>
 				<li class="nav-item"><a class="nav-link {{ setActive('howto') }}" href="{{ route('howto') }}">@lang('HowTo')</a></li>
 				<li class="nav-item"><a class="nav-link {{ setActive('raids') }}" href="{{ route('raids') }}">@lang('Raid Status')</a></li>
-				<li class="nav-item"><a class="nav-link {{ setActive('login') }}" href="{{ route('login') }}">@lang('Login')</a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="#">@lang('Discord')</a></li>
+				<li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('Login')</a></li>
 			</ul>
 		</div>
 	</div>
