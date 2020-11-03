@@ -17,9 +17,21 @@
 				<li class="nav-item"><a class="nav-link {{ setActive('features') }}" href="{{ route('features') }}">@lang('Features')</a></li>
 				<li class="nav-item"><a class="nav-link {{ setActive('howto') }}" href="{{ route('howto') }}">@lang('HowTo')</a></li>
 				<li class="nav-item"><a class="nav-link {{ setActive('raids') }}" href="{{ route('raids') }}">@lang('Raid Status')</a></li>
-				<li class="nav-item"><a class="nav-link" target="_blank" href="#">@lang('Discord')</a></li>
-				<li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('Login')</a></li>
+				<li class="nav-item"><a class="nav-link" target="_blank" href="https://discord.gg/DDPRMZznhD">@lang('Discord')</a></li>
+				@guest
+					<li class="nav-item"><a class="nav-link" href="{{ route('login') }}">@lang('Login')</a></li>
+					<li class="nav-item"><a class="nav-link" href="{{ route('register') }}">@lang('Register')</a></li>
+				@else
+					<li class="nav-item">
+						<a class="nav-link" href="#" onclick="event.preventDefault();
+						document.getElementById('logout-form').submit();">@lang('Logout')
+						</a>
+					</li>
+				@endguest
 			</ul>
 		</div>
 	</div>
+	<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+	    @csrf
+	</form>
 </nav>

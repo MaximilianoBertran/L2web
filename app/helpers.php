@@ -25,4 +25,9 @@ function getStatuslogin(){
     }
     return $login;
 }
+function respawnTime($seconds){
+    $date = new DateTime();
+    $date->modify('+'.$seconds.' second');
+    return $date->format('d-m-y H:i:s');
+}
 ?>
